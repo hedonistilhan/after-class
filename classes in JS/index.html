@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Class Inheritance Example</title>
+</head>
+
+<body>
+
+    <h2>Class with Static and Non-Static Methods</h2>
+
+    <p id="output"></p>
+
+    <button onclick="showDetails()">Show Details</button>
+
+    <script>
+        // Parent Class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Non-static method
+            getDetails() {
+                return "Name: " + this.name + ", Age: " + this.age;
+            }
+
+            // Static method
+            static greet() {
+                return "Hello! Welcome to the class inheritance example.";
+            }
+        }
+
+        // Child Class inheriting Person
+        class Student extends Person {
+            constructor(name, age, grade) {
+                super(name, age);  // Calling parent constructor
+                this.grade = grade;
+            }
+
+            // Child class method
+            getGrade() {
+                return "Grade: " + this.grade;
+            }
+        }
+
+        function showDetails() {
+
+            // Access static method using class name
+            let greeting = Person.greet();
+
+            // Create object of child class
+            let student1 = new Student("Tina", 16, "10th");
+
+            // Access parent non-static method
+            let details = student1.getDetails();
+
+            // Access child method
+            let grade = student1.getGrade();
+
+            document.getElementById("output").innerHTML =
+                greeting + "<br><br>" +
+                details + "<br>" +
+                grade;
+        }
+    </script>
+
+</body>
+
+</html>
