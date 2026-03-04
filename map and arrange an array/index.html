@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Mapping and Sorting</title>
+</head>
+
+<body>
+
+    <h2>Array Mapping and Sorting</h2>
+
+    <p id="original"></p>
+    <p id="mapped"></p>
+    <p id="result"></p>
+
+    <button onclick="sortAscending()">Sort Ascending</button>
+    <button onclick="sortDescending()">Sort Descending</button>
+
+    <script>
+        // Step 1: Create an array
+        const numbers = [2, 4, 6, 8, 10];
+
+        // Step 2: Map the array with multiplication function
+        const mappedNumbers = numbers.map(function (num) {
+            return num * 3;   // You can change the multiplication number
+        });
+
+        // Display original and mapped array
+        document.getElementById("original").innerHTML =
+            "Original Array: " + numbers;
+
+        document.getElementById("mapped").innerHTML =
+            "Mapped Array (x3): " + mappedNumbers;
+
+        // Step 3: Sort Ascending
+        function sortAscending() {
+            let asc = [...mappedNumbers].sort(function (a, b) {
+                return a - b;
+            });
+            document.getElementById("result").innerHTML =
+                "Ascending Order: " + asc;
+        }
+
+        // Step 4: Sort Descending
+        function sortDescending() {
+            let desc = [...mappedNumbers].sort(function (a, b) {
+                return b - a;
+            });
+            document.getElementById("result").innerHTML =
+                "Descending Order: " + desc;
+        }
+    </script>
+
+</body>
+
+</html>
