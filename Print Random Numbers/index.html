@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Numbers using While Loop</title>
+</head>
+
+<body>
+
+    <h2>Print Random Numbers</h2>
+
+    <p id="output"></p>
+
+    <button onclick="generateNumbers()">Generate Random Numbers</button>
+
+    <script>
+
+        function generateNumbers() {
+
+            let count = 0;  // block scoped variable
+            let result = "";
+
+            while (count < 5) {
+
+                // 'randomNum' exists only inside this block
+                let randomNum = Math.floor(Math.random() * 100);
+
+                result += randomNum + "<br>";
+                count++;
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+
+</body>
+
+</html>
